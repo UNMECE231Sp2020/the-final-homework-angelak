@@ -36,7 +36,10 @@ class Stack {
 
 		//This overloaded operator is empty, please implement
 		Stack<T> operator=(const Stack<T> &stack) {
-			;
+			if(this != &stack){
+				std::copy(stack._data, stack._size);
+			}
+			return *this;
 		}
 
 		template <class S>
